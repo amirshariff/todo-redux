@@ -16,51 +16,41 @@ const useStyles = makeStyles({
 	},
 });
 
-function createData(name, calories, fat, carbs, protein) {
-	return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-	createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-	createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-	createData('Eclair', 262, 16.0, 24, 6.0),
-	createData('Cupcake', 305, 3.7, 67, 4.3),
-	createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
-function SimpleTable() {
-	const classes = useStyles();
+function SimpleTable({ students }) {
+    console.log(students[1])
+    const classes = useStyles();
 
     return (
-			<Container>
-				<TableContainer component={Paper}>
-					<Table className={classes.table} aria-label="simple table">
-						<TableHead>
-							<TableRow>
-								<TableCell>Dessert (100g serving)</TableCell>
-								<TableCell>Calories</TableCell>
-								<TableCell>Fat&nbsp;(g)</TableCell>
-								<TableCell>Carbs&nbsp;(g)</TableCell>
-								<TableCell>Protein&nbsp;(g)</TableCell>
-							</TableRow>
-						</TableHead>
-						<TableBody>
-							{rows.map((row) => (
-								<TableRow key={row.name}>
-									<TableCell component="th" scope="row">
-										{row.name}
-									</TableCell>
-									<TableCell align="right">{row.calories}</TableCell>
-									<TableCell align="right">{row.fat}</TableCell>
-									<TableCell align="right">{row.carbs}</TableCell>
-									<TableCell align="right">{row.protein}</TableCell>
-								</TableRow>
-							))}
-						</TableBody>
-					</Table>
-				</TableContainer>
-			</Container>
-		);
+        <Container>
+            <TableContainer component={Paper}>
+                <Table className={classes.table} aria-label="simple table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Name</TableCell>
+                            <TableCell>Age</TableCell>
+                            <TableCell>Class</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {students.map((student, i) => (
+                            <TableRow key={i}>
+                                <TableCell component="th" scope="row">
+                                    {student.firstName}
+                                </TableCell>
+                                <TableCell >{student.age}</TableCell>
+                                <TableCell >{student.class}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+            <input></input>
+            <button>Submit</button>
+        </Container>
+    );
+	
 }
 const mapToState = (state) => {
     return {

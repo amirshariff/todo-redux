@@ -1,6 +1,8 @@
 export const addStudent = (input) => {
     return {
         type: 'ADDSTUDENT',
-        firstName: {input}
+        payLoad:{firstName: { input },age: { input },
+        class: {input}}
+       
     }
 }

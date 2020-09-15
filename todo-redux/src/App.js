@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import Register from './register'
-
+import SimpleTable from './SimpleTable';
+import Form from './Form'
 function App() {
   return (
-    <div className="App">
-      <Register/>
-    </div>
-  );
+		<div className="App">
+		  <SimpleTable />
+		  <Form/>
+		</div>
+	);
 }
 
 export default App;

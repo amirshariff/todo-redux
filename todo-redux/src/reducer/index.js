@@ -8,10 +8,13 @@ const students = [
 const reducer = (state={students},action) => {
     switch (action.type) {
         case ADDSTUDENT:
-            let allStudents = [...state.students, action.payload]
+            
+            
+            let allStudents = [...state.students, action.payLoad]
             return {
                 students:allStudents
             }
+          
             
             
     
